@@ -11,9 +11,15 @@ const Form = () => {
 
     const controller = new AbortController()
     const signal = controller.signal
-    const url = 'http://www.boredapi.com/api/activity/'
+    let url = 'http://www.boredapi.com/api/activity/'
 
+    const getCategory = (value) => {
+        setCategory(value)
+    }
     const fetchIdea = () => {
+        if (category !== '') {
+            url = 'http://www.boredapi.com/api/activity' + '?type=' + category
+        }
         fetch(url, {
             method: 'get',
             signal: signal
@@ -49,15 +55,15 @@ const Form = () => {
                 </div>
 
                 <div id="categories">
-                    <button>Education</button>
-                    <button>Recreational</button>
-                    <button>Social</button>
-                    <button>DIY</button>
-                    <button>Charity</button>
-                    <button>Cooking</button>
-                    <button>Relaxation</button>
-                    <button>Music</button>
-                    <button>Busywork</button>
+                    <button value='education' onClick={(e) => getCategory(e.target.value)}>Education</button>
+                    <button value='recreational' onClick={(e) => getCategory(e.target.value)}>Recreational</button>
+                    <button value='social' onClick={(e) => getCategory(e.target.value)}>Social</button>
+                    <button value='diy' onClick={(e) => getCategory(e.target.value)}>DIY</button>
+                    <button value='charity' onClick={(e) => getCategory(e.target.value)}>Charity</button>
+                    <button value='cooking' onClick={(e) => getCategory(e.target.value)}>Cooking</button>
+                    <button value='relaxation' onClick={(e) => getCategory(e.target.value)}>Relaxation</button>
+                    <button value='music' onClick={(e) => getCategory(e.target.value)}>Music</button>
+                    <button value='busywork' onClick={(e) => getCategory(e.target.value)}>Busywork</button>
                 </div>
             </div>
             <button onClick={fetchIdea}>Mmmm, give me another idea!</button>
