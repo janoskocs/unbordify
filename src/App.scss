@@ -5,7 +5,7 @@ body {
 #particle-container {
     position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: -999;
 }
 
 .particle {
@@ -40,9 +40,9 @@ h1 {
 }
 
 #activity {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 2rem;
     text-align: center;
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.2);
@@ -59,7 +59,7 @@ h1 {
     }
 
     button {
-        padding: 1rem;
+        padding: 0.75rem;
         border-radius: 16px;
         border: 1px solid #fff;
         margin: 5px;
