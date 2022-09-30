@@ -11,7 +11,7 @@ const Form = () => {
     const signal = controller.signal
 
     const fetchIdea = (category) => {
-        let url = '';
+        let url = ''
 
         if (category === 'random' || category === undefined) {
             url = 'http://www.boredapi.com/api/activity/'
