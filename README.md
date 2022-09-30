@@ -2,6 +2,8 @@
 
 This app inspires users to find something exciting to do in their free time.
 
+[Click here to visit](http://unbordify.janoskocs.com/)
+
 ## Technologies used
 
 React, Sass, BoredAPI
